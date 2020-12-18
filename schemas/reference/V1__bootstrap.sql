@@ -10,4 +10,4 @@ GRANT ${serviceuser} to ${authenticatoruser};
 CREATE ROLE ${readonlyuser} NOLOGIN;
 GRANT USAGE ON SCHEMA ${schema} TO ${readonlyuser};
 GRANT ${readonlyuser} to ${authenticatoruser};
-GRANT USAGE ON ALL SEQUENCES IN SCHEMA ${schema} TO ${serviceuser};
+GRANT USAGE,SELECT ON ALL SEQUENCES IN SCHEMA ${schema} TO ${serviceuser};
