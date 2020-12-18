@@ -51,7 +51,7 @@ COMMENT ON COLUMN beacondefinitions.rssirangefrom IS '{"label": "RSSI Range From
 COMMENT ON COLUMN beacondefinitions.isactive IS '{"label": "Active", "description": "Active location sensor", "summaryview": "true"}';
 COMMENT ON COLUMN beacondefinitions.isentry IS '{"label": "Entry", "description": "Entry position sensor", "summaryview": "true"}';
 COMMENT ON COLUMN beacondefinitions.isexit IS '{"label": "Exit", "description": "Exit position sensor", "summaryview": "true"}';
-COMMENT ON COLUMN beacondefinitions.isexterntal IS '{"label": "External", "description": "External sensor", "summaryview": "true"}';
+COMMENT ON COLUMN beacondefinitions.isexternal IS '{"label": "External", "description": "External sensor", "summaryview": "true"}';
 COMMENT ON COLUMN beacondefinitions.isinternal IS '{"label": "Internal", "description": "Internal sensor", "summaryview": "true"}';
 COMMENT ON COLUMN beacondefinitions.useforstatecalculation IS '{"label": "State Calculation", "description": "Include device in calculation of state", "summaryview": "true"}';
 COMMENT ON COLUMN beacondefinitions.ispurchasepoint IS '{"label": "Purchase Point", "description": "Is location a purchase point?", "summaryview": "true"}';
