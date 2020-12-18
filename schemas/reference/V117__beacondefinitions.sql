@@ -12,7 +12,7 @@ CREATE TABLE beacondefinitions (
   isactive BOOLEAN NOT NULL,
   isentry BOOLEAN NOT NULL,
   isexit BOOLEAN NOT NULL,
-  isexterntal BOOLEAN NOT NULL,
+  isexternal BOOLEAN NOT NULL,
   isinternal BOOLEAN NOT NULL,
   useforstatecalculation BOOLEAN NOT NULL,
   ispurchasepoint BOOLEAN NOT NULL,
