@@ -1,5 +1,5 @@
 CREATE TABLE beacondefinitions (
-  id INT4 NOT NULL PRIMARY KEY,
+  id SERIAL PRIMARY KEY,
   beaconnum INT4 NOT NULL,
   locationid INT4 NOT NULL,
   beaconname VARCHAR(50) NOT NULL,

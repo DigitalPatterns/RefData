@@ -1,9 +1,9 @@
 CREATE TABLE ouiandaddress (
-  id INT4 NOT NULL PRIMARY KEY,
+  id SERIAL PRIMARY KEY,
   oui VARCHAR(6) NOT NULL,
   organization_name VARCHAR(250) NOT NULL,
   organization_address VARCHAR(550) NOT NULL,
-  ouigroup_name VARCHAR(250) NOT NULL,
+  ouigroup_name VARCHAR(250),
   validfrom TIMESTAMP WITH TIME ZONE,
   validto TIMESTAMP WITH TIME ZONE,
   updatedby VARCHAR(60) NULL
