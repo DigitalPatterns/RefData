@@ -11,3 +11,4 @@ CREATE ROLE ${readonlyuser} NOLOGIN;
 GRANT USAGE ON SCHEMA ${schema} TO ${readonlyuser};
 GRANT ${readonlyuser} to ${authenticatoruser};
 GRANT USAGE,SELECT ON ALL SEQUENCES IN SCHEMA ${schema} TO ${serviceuser};
+ALTER DEFAULT PRIVILEGES IN SCHEMA ${schema} GRANT USAGE, SELECT ON SEQUENCES TO ${serviceuser};
