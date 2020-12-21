@@ -36,7 +36,7 @@ CREATE TABLE beacondefinitions (
 );
 
 -- Table comment
-COMMENT ON TABLE beacondefinitions IS '{"label": "Beacon definitions", "owner": "mark@digitalpatterns.io", "description": "Precog IOT Beacon definitions, "schemalastupdated": "18/12/2020", "dataversion": 1}';
+COMMENT ON TABLE beacondefinitions IS '{"label": "Beacon definitions", "owner": "mark@digitalpatterns.io", "description": "Precog IOT Beacon definitions", "schemalastupdated": "18/12/2020", "dataversion": 1}';
 -- Column comments
 COMMENT ON COLUMN beacondefinitions.id IS '{"label": "Identifier", "description": "Unique identifying column", "summaryview": "false"}';
 COMMENT ON COLUMN beacondefinitions.beaconnum IS '{"label": "BeaconNum", "businesskey": "true", "description": "Beacon Number", "summaryview": "true"}';
