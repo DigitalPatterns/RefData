@@ -8,19 +8,23 @@ Each Table must contain a comment in JSON format containing the following entiti
 * description
 * schemalastupdated
 * dataversion
-* owner
+* `owner` - a group email 
+
+and these columns are required:
+
+* validfrom
+* validto
+
 
 Each Column must contain a comment in JSON format containing the following entities:
 
 * label
 * description
 * summaryview
-* validfrom
-* validto
 
 One column must also contain the comment:
 
-* businesskey: "true"
+* businesskey: true
 
 Optional entities for column comments:
 
@@ -31,12 +35,14 @@ Optional entities for column comments:
 * maximumvalue
 
 
+# There should be NO CSVs checked into the repo
+
 ## Grants
 
 Each table must have at least two GRANTs, as follows:
 * serviceuser - This used by Camunda to allow new records to be added to the Reference data and current records to be updated.
 * readonlyuser - This user can read all records.
-* anonuser - This user should only be added to public tables where authentication is not needed to see the data. 
+* anonuser - This user should only be added to public tables where authentication is not needed to see the data.
 This should be the default for all datasets unless they are deemed sensitive.
 
 
@@ -57,7 +63,7 @@ COMMENT ON TABLE ministry IS '{"label": "Government ministries", "owner": "xyx@t
 -- Column comments
 COMMENT ON COLUMN ministry.id IS '{"label": "Identifier", "description": "Database unique identity record.", "summaryview": "false"}';
 COMMENT ON COLUMN ministry.name IS '{"label": "Name", "description": "The name of the branch or region.", "summaryview": "true"}';
-COMMENT ON COLUMN ministry.code IS '{"label": "Code", "businesskey": "true", "description": "The code associated with the branch or region.", "summaryview": "true"}';
+COMMENT ON COLUMN ministry.code IS '{"label": "Code", "businesskey": true, "description": "The code associated with the branch or region.", "summaryview": "true"}';
 COMMENT ON COLUMN ministry.validfrom IS '{"label": "Valid from date", "description": "Item valid from date.", "summaryview" : "false"}';
 COMMENT ON COLUMN ministry.validto IS '{"label": "Valid to date", "description": "Item valid to date.", "summaryview" : "false"}';
 COMMENT ON COLUMN ministry.updatedby IS '{"label": "Updated By", "description": "Record updated by", "summaryview": "false"}';
@@ -88,3 +94,8 @@ GRANT SELECT ON ministry TO ${anonuser};
 * FLYWAY_PLACEHOLDERS_ANONUSER
 * FLYWAY_PLACEHOLDERS_SERVICEUSER
 * FLYWAY_PLACEHOLDERS_READONLYUSER
+
+## Development
+
+Launch PG database server in one line: `docker run -d --name refpg -e POSTGRES_PASSWORD=postgres -p 5432:5432 postgres`. This uses standard port, username `postgres` and password `postgres`.
+
